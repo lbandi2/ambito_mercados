@@ -1,0 +1,16 @@
+networks:
+  proxy:
+    external: true
+services:
+  api-ambito-mercados:
+    container_name: api-ambito-mercados
+    environment:
+    - PUID=568
+    - PGID=568
+    - TZ=America/Bogota
+    image: lbandi2/ambito_mercados:latest
+    networks:
+    - proxy
+    ports:
+    - 10.10.15.10:${PORT}:80
+    restart: unless-stopped
