@@ -8,7 +8,7 @@ services:
     - PUID=568
     - PGID=568
     - TZ=America/Bogota
-    image: lbandi2/ambito_mercados:latest
+    image: lbandi2/api-ambito-mercados:latest
     networks:
     - proxy
     ports:
@@ -29,4 +29,5 @@ services:
     - homepage.href=https://api-ambito-mercados.${LOCAL_DNS}/docs
     - homepage.description=Valores de mercado
     - homepage.target=_top
+
 
