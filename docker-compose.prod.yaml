@@ -15,19 +15,13 @@ services:
     - 10.10.15.10:${PORT}:80
     restart: unless-stopped
     labels:
-    # Traefik
-    - traefik.enable=true
-    - traefik.http.routers.api-ambit-mercados.rule=Host(`api-ambit-mercados.${LOCAL_DNS}`)
-    - traefik.http.routers.api-ambit-mercados.entrypoints=https
-    - traefik.http.routers.api-ambit-mercados.tls=true
-    - traefik.http.services.api-ambit-mercados.loadbalancer.server.port=${PORT}
-    - traefik.http.routers.api-ambit-mercados.middlewares=authelia@docker
     # Homepage
     - homepage.group=APIs
     - homepage.name=Ambito Mercados
     - homepage.icon=https://licitacionesargentina.com/wp-content/uploads/2022/11/Publicar-licitacion-en-diario-Ambito-Financiero-Licitaciones-1.png
-    - homepage.href=https://api-ambito-mercados.${LOCAL_DNS}/docs
+    - homepage.href=http://10.10.15.10:${PORT}/docs
     - homepage.description=Valores de mercado
     - homepage.target=_top
+
 
 
